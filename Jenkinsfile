@@ -19,7 +19,7 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Mocha') {
             steps {
                 // Implementar a aplicação (substitua com o comando apropriado)
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'mochawesome-report', reportFiles: 'mochawesome.html', reportName: 'EBAC Report', reportTitles: '', useWrapperFileDirectly: true])
