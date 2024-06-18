@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Executar os testes da aplicação (substitua com o comando apropriado)
-                sh 'npm run cy:run'  // Exemplo com npm
+                sh 'NO_COLOR=1 npm run cy:run'  // Exemplo com npm
             }
         }
         
