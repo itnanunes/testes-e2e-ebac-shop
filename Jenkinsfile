@@ -3,27 +3,21 @@ pipeline {
     
     stages {
      
-    
-        
         stage('Setup') {
             steps {
-                // Executar o build da aplicação (substitua com o comando apropriado)
-                sh 'npm install'  // Exemplo com npm
+                sh 'npm install'  
             }
         }
         
         stage('Test') {
             steps {
-                // Executar os testes da aplicação (substitua com o comando apropriado)
                 sh 'NO_COLOR=1 npm run cy:run'  // Exemplo com npm
             }
         }
         
-        stage('Mocha') {
-            steps {
-                // Implementar a aplicação (substitua com o comando apropriado)
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'mochawesome-report', reportFiles: 'mochawesome.html', reportName: 'EBAC Report', reportTitles: '', useWrapperFileDirectly: true])
-            }
+        stage('Deploy') {
+            steps {       
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'mochawesome-report', reportFiles: 'mochawesome.html', reportName: 'EBAC TEST Report', reportTitles: '', useWrapperFileDirectly: true])            }
         }
     }
     
