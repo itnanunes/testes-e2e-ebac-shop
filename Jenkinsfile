@@ -5,13 +5,13 @@ pipeline {
      
         stage('Setup') {
             steps {
-                sh 'npm install'  
+                bat'npm install'  
             }
         }
         
         stage('Test') {
             steps {
-                sh 'NO_COLOR=1 npm run cy:run'  // Exemplo com npm
+                bat'NO_COLOR=1 npm run cy:run'  // Exemplo com npm
             }
         }
         
