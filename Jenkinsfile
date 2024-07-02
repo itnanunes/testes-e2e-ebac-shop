@@ -11,7 +11,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                bat'NO_COLOR=1 npm run cy:run'  // Exemplo com npm
+                 bat 'set NO_COLOR=1 && npm run cy:run' // Exemplo com npm
             }
         }
         
